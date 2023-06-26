@@ -1,0 +1,226 @@
+/*
+Theme Name: My WordPress Theme
+Theme URI: https://www.example.com/my-wordpress-theme/
+Description: A brief description of your theme.
+Author: Your name or the name of your company.
+Author URI: https://www.example.com/
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: responsive-layout, custom-background, custom-logo, featured-images, threaded-comments
+*/
+
+body {
+    
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .background{
+    height: 100vh;
+    background-image: url(SalleTransparente.png);
+    
+  }
+  
+  .screen {
+    position: relative;
+    height: 100vh;
+  }
+  
+  .screen img {
+    height: 110%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .data {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Vos styles CSS pour les données du portfolio vont ici */
+  }
+  
+  .carousel {
+    position: relative;
+    width: 1270px;
+    height: 712px;
+    margin: 0 auto;
+    overflow: hidden;
+    top: 60px;
+  }
+  
+  .slide {
+  position: relative;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s; /* Ajoutez une transition de 0.5 seconde pour l'opacité */
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+  
+
+
+.slide img {
+    width: 100%; /* Ajouter une largeur de 100% pour que l'image remplisse la diapositive */
+    height: auto; /* Utiliser une hauteur auto pour maintenir le ratio d'aspect de l'image */
+}
+
+.overlay {
+    /* ... Vos styles existants pour la superposition ... */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrer la superposition verticalement et horizontalement */
+    max-width: 90%; /* Définir une largeur maximale pour la superposition */
+}
+
+  
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.prev:hover,
+.next:hover,
+.prev:focus,
+.next:focus {
+  color: #007bff; /* Couleur au survol ou au focus */
+  background-color: transparent; /* Fond au survol ou au focus */
+}
+
+
+  .prev.animate,
+.next.animate {
+  animation: arrowClickAnimation 1s;
+}
+
+@keyframes arrowClickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ... Vos styles existants ... */
+
+.image-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  z-index: 999;
+}
+
+.image-popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  z-index: 1000;
+}
+
+.image-popup-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  height: 100vh;
+  overflow: auto;
+}
+
+.image-popup-content img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button span {
+  margin-right: 8px;
+}
+
+.button svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.button:hover svg {
+  transform: rotate(180deg);
+}
+
+.overlay {
+  /* ... Vos styles existants pour la superposition ... */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay h2 {
+  font-size: 2.5rem; /* Augmenter la taille de la police du titre */
+  margin-bottom: 10px; /* Ajouter un espace en bas du titre */
+}
+
+.overlay p {
+  font-size: 1.5rem; /* Augmenter la taille de la police de la description */
+  margin-bottom: 20px; /* Ajouter un espace en bas de la description */
+}
